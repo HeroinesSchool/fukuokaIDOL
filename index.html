@@ -1,0 +1,844 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f6f8">
+  <title>福岡アイドル好き顔9選</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #1d2634;
+      --muted: #778292;
+      --line: #e3e7ed;
+      --paper: #fff;
+      --ground: #f5f6f8;
+      --accent: #3e78a8;
+      --accent-dark: #265b85;
+      --accent-soft: #e9f2f8;
+      --gold: #d6a847;
+      --danger: #b94141;
+      --shadow: 0 14px 36px rgba(31, 49, 68, .08);
+    }
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--ground);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    button, input { font: inherit; }
+    button { -webkit-tap-highlight-color: transparent; }
+    .shell { width: min(100%, 920px); margin: 0 auto; padding: 22px 18px 48px; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px; }
+    .brand { display: flex; align-items: center; gap: 11px; min-width: 0; }
+    .brand-mark { display: grid; place-items: center; flex: 0 0 38px; width: 38px; height: 38px; border-radius: 12px; background: var(--ink); color: #fff; font-size: 12px; font-weight: 800; letter-spacing: -.04em; }
+    .brand-title { margin: 0; font-size: 14px; line-height: 1.3; font-weight: 800; letter-spacing: .02em; }
+    .brand-subtitle { margin: 3px 0 0; color: var(--muted); font-size: 11px; }
+    .top-actions { display: flex; gap: 8px; }
+    .icon-button { border: 1px solid var(--line); border-radius: 10px; background: #fff; color: var(--muted); padding: 8px 11px; font-size: 12px; font-weight: 700; cursor: pointer; }
+    .icon-button:hover { color: var(--ink); border-color: #b9c4d0; }
+    .hero { position: relative; overflow: hidden; padding: clamp(23px, 5vw, 42px); border: 1px solid var(--line); border-radius: 22px; background: var(--paper); box-shadow: var(--shadow); }
+    .eyebrow { color: var(--accent); font-size: 11px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+    h1 { margin: 9px 0 10px; font-size: clamp(25px, 5vw, 39px); line-height: 1.18; letter-spacing: -.035em; }
+    h2 { margin: 0; font-size: clamp(20px, 4vw, 27px); line-height: 1.3; letter-spacing: -.02em; }
+    h3 { margin: 0; font-size: 15px; }
+    p { line-height: 1.7; }
+    .lead { max-width: 650px; margin: 0; color: #576374; font-size: 14px; }
+    .hero-orbit { position: absolute; right: -52px; top: -87px; width: 250px; height: 250px; border: 1px solid #eaf0f4; border-radius: 50%; pointer-events: none; }
+    .hero-orbit::before, .hero-orbit::after { content: ""; position: absolute; border: 1px solid #eaf0f4; border-radius: 50%; }
+    .hero-orbit::before { inset: 25px; }
+    .hero-orbit::after { inset: 51px; }
+    .intro-stat { display: flex; align-items: baseline; gap: 9px; margin: 23px 0; }
+    .intro-stat strong { font-size: 35px; letter-spacing: -.06em; }
+    .intro-stat span { color: var(--muted); font-size: 13px; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 24px 0; }
+    .step-card { min-height: 92px; padding: 14px; border: 1px solid var(--line); border-radius: 14px; background: #fbfcfd; }
+    .step-num { color: var(--accent); font-size: 11px; font-weight: 900; letter-spacing: .08em; }
+    .step-card b { display: block; margin-top: 6px; font-size: 13px; }
+    .step-card small { display: block; margin-top: 4px; color: var(--muted); font-size: 11px; line-height: 1.5; }
+    .toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; margin-top: 19px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 45px; padding: 0 18px; border: 1px solid transparent; border-radius: 12px; background: var(--accent); color: #fff; font-size: 13px; font-weight: 800; cursor: pointer; transition: transform .12s, background .12s, border-color .12s; }
+    .button:hover { background: var(--accent-dark); transform: translateY(-1px); }
+    .button:disabled { background: #aab3bc; cursor: not-allowed; transform: none; }
+    .button.secondary { border-color: var(--line); background: #fff; color: var(--ink); }
+    .button.secondary:hover { border-color: #bdc7d2; background: #fafbfd; }
+    .button.ghost { min-height: 38px; padding: 0 12px; border-color: var(--line); background: transparent; color: #536173; font-size: 12px; }
+    .button.ghost:hover { background: #fff; }
+    .button.warning { border-color: #f0dddd; background: #fff8f8; color: var(--danger); }
+    .file-button { position: relative; overflow: hidden; }
+    .file-button input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+    .status-note { margin: 12px 0 0; color: var(--muted); font-size: 11px; }
+    .notice { margin-top: 14px; padding: 12px 14px; border-radius: 12px; background: #f2f5f8; color: #586474; font-size: 12px; line-height: 1.65; }
+    .notice strong { color: var(--ink); }
+    .view-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; margin: 27px 2px 15px; }
+    .view-title { min-width: 0; }
+    .view-sub { margin: 6px 0 0; color: var(--muted); font-size: 12px; }
+    .counter { flex: 0 0 auto; text-align: right; color: var(--muted); font-size: 11px; line-height: 1.6; }
+    .counter strong { color: var(--ink); font-size: 17px; }
+    .progress-track { height: 5px; margin: 0 2px 16px; overflow: hidden; border-radius: 99px; background: #e5e9ee; }
+    .progress-fill { height: 100%; border-radius: inherit; background: var(--accent); transition: width .25s ease; }
+    .card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+    .card-grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 660px; margin: 0 auto; gap: 15px; }
+    .card-grid.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .person-card { position: relative; min-width: 0; padding: 7px; border: 2px solid transparent; border-radius: 16px; background: #fff; box-shadow: 0 5px 18px rgba(31, 49, 68, .055); text-align: left; cursor: pointer; transition: border-color .14s, transform .14s, box-shadow .14s; }
+    .person-card:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(31, 49, 68, .1); }
+    .person-card.selected { border-color: var(--accent); background: #f7fbfe; }
+    .person-card.rank-first { border-color: #d1a13c; }
+    .person-card.rank-second { border-color: #8498ad; }
+    .person-card:focus-visible, .button:focus-visible, .icon-button:focus-visible { outline: 3px solid rgba(62, 120, 168, .35); outline-offset: 2px; }
+    .photo { position: relative; overflow: hidden; width: 100%; aspect-ratio: 1 / 1; border-radius: 10px; background: #edf0f3; }
+    .photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .photo-missing { display: grid; place-items: center; width: 100%; height: 100%; background: linear-gradient(145deg, #e9edf1, #f7f8fa); color: #a1abb6; font-size: clamp(11px, 2vw, 16px); font-weight: 800; letter-spacing: .06em; }
+    .person-meta { min-height: 42px; padding: 9px 4px 2px; }
+    .person-name { display: block; overflow: hidden; color: var(--ink); font-size: 12px; font-weight: 800; text-overflow: ellipsis; white-space: nowrap; }
+    .person-group { display: block; overflow: hidden; margin-top: 3px; color: var(--muted); font-size: 10px; text-overflow: ellipsis; white-space: nowrap; }
+    .pick-badge { position: absolute; z-index: 2; top: 11px; left: 11px; display: grid; place-items: center; width: 25px; height: 25px; border: 2px solid #fff; border-radius: 50%; background: var(--accent); color: #fff; font-size: 11px; font-weight: 900; box-shadow: 0 2px 8px rgba(0,0,0,.16); }
+    .pick-badge.gold { background: #bd8e32; }
+    .pick-badge.silver { background: #70859c; }
+    .selection-tip { margin: 0 0 13px; color: #6d7887; font-size: 12px; }
+    .sticky-actions { position: sticky; z-index: 5; bottom: 0; display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 18px -18px -48px; padding: 14px 18px max(14px, env(safe-area-inset-bottom)); border-top: 1px solid var(--line); background: rgba(245, 246, 248, .95); backdrop-filter: blur(12px); }
+    .sticky-left, .sticky-right { display: flex; align-items: center; gap: 8px; }
+    .sticky-info { color: var(--muted); font-size: 11px; }
+    .duel-card { padding: 9px; }
+    .duel-card .person-name { font-size: 14px; }
+    .duel-vs { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 18px 0 13px; color: #8792a0; font-size: 11px; font-weight: 800; letter-spacing: .12em; }
+    .duel-vs::before, .duel-vs::after { content: ""; width: min(17vw, 100px); height: 1px; background: var(--line); }
+    .result-wrap { padding: clamp(12px, 3vw, 24px); border: 1px solid var(--line); border-radius: 20px; background: #fff; box-shadow: var(--shadow); }
+    .result-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(5px, 1.5vw, 12px); }
+    .result-slot { position: relative; overflow: hidden; border-radius: 12px; background: #edf0f3; aspect-ratio: 1 / 1.15; }
+    .result-slot.center { outline: 3px solid #d2a74e; outline-offset: 1px; }
+    .result-slot img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .result-slot .photo-missing { font-size: clamp(10px, 2.3vw, 18px); }
+    .result-rank { position: absolute; z-index: 2; top: 6px; left: 6px; display: grid; place-items: center; min-width: 28px; height: 28px; padding: 0 5px; border: 1px solid rgba(255,255,255,.8); border-radius: 9px; background: rgba(29, 38, 52, .86); color: #fff; font-size: 11px; font-weight: 900; }
+    .result-slot.center .result-rank { background: #b88a31; }
+    .result-caption { position: absolute; right: 0; bottom: 0; left: 0; overflow: hidden; padding: 19px 8px 7px; background: linear-gradient(transparent, rgba(10, 16, 24, .82)); color: #fff; font-size: clamp(9px, 2.3vw, 12px); font-weight: 800; text-overflow: ellipsis; white-space: nowrap; }
+    .result-position { margin: 15px 0 0; color: var(--muted); font-size: 11px; line-height: 1.7; text-align: center; }
+    .home-panel { display: flex; min-height: min(78vh, 760px); flex-direction: column; align-items: center; justify-content: center; padding: 28px 0 42px; }
+    .home-title { margin: 0 0 24px; text-align: center; font-size: clamp(29px, 6vw, 44px); }
+    .home-start { min-width: 190px; }
+    .home-previous { width: min(100%, 520px); margin-top: 34px; padding: 18px; border: 1px solid var(--line); border-radius: 18px; background: #fff; box-shadow: var(--shadow); }
+    .home-previous-title { margin: 0 0 12px; font-size: 14px; text-align: center; }
+    .home-result-grid { gap: 6px; }
+    .home-result-grid .result-slot { aspect-ratio: 1 / 1; border-radius: 8px; }
+    .home-result-grid .result-rank { top: 4px; left: 4px; min-width: 23px; height: 23px; border-radius: 7px; font-size: 9px; }
+    .home-result-grid .result-caption { padding: 15px 5px 5px; font-size: clamp(8px, 2vw, 10px); }
+    .community-summary { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 17px 0 20px; padding: 15px; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+    .community-summary strong { font-size: 25px; letter-spacing: -.04em; }
+    .community-summary span { color: var(--muted); font-size: 12px; }
+    .stat-list { display: grid; gap: 9px; }
+    .stat-row { display: grid; grid-template-columns: 54px minmax(0, 1fr) auto; align-items: center; gap: 12px; padding: 8px 12px 8px 8px; border: 1px solid var(--line); border-radius: 13px; background: #fff; }
+    .stat-thumb { width: 54px; }
+    .stat-thumb .photo { border-radius: 8px; }
+    .stat-main { min-width: 0; }
+    .stat-name { display: block; overflow: hidden; font-size: 13px; font-weight: 800; text-overflow: ellipsis; white-space: nowrap; }
+    .stat-group, .stat-firsts { display: block; margin-top: 3px; color: var(--muted); font-size: 10px; }
+    .stat-count { text-align: right; white-space: nowrap; }
+    .stat-count strong { display: block; font-size: 17px; }
+    .stat-count small { color: var(--muted); font-size: 10px; }
+    .result-position b { color: var(--ink); }
+    .empty-note { padding: 22px; border: 1px dashed #c8d0da; border-radius: 15px; color: var(--muted); font-size: 13px; text-align: center; }
+    .toast { position: fixed; z-index: 20; right: 16px; bottom: 18px; left: 16px; width: fit-content; max-width: 520px; margin: 0 auto; padding: 12px 16px; transform: translateY(20px); border-radius: 12px; background: #263242; color: #fff; font-size: 12px; line-height: 1.5; opacity: 0; pointer-events: none; transition: opacity .18s, transform .18s; box-shadow: 0 10px 28px rgba(0,0,0,.16); }
+    .toast.show { transform: translateY(0); opacity: 1; }
+    .muted { color: var(--muted); }
+    @media (min-width: 700px) {
+      .shell { padding-top: 30px; }
+      .card-grid { gap: 16px; }
+      .person-card { padding: 9px; border-radius: 18px; }
+      .photo { border-radius: 12px; }
+      .person-meta { min-height: 48px; padding: 10px 4px 3px; }
+      .person-name { font-size: 14px; }
+      .person-group { font-size: 11px; }
+    }
+    @media (max-width: 560px) {
+      .shell { padding: 14px 12px 40px; }
+      .hero { border-radius: 18px; }
+      .steps { gap: 7px; }
+      .step-card { padding: 11px 9px; min-height: 91px; }
+      .step-card b { font-size: 11px; }
+      .step-card small { font-size: 10px; }
+      .card-grid { gap: 7px; }
+      .card-grid.four { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+      .person-card { padding: 5px; border-radius: 12px; }
+      .photo { border-radius: 8px; }
+      .person-meta { min-height: 35px; padding: 7px 3px 1px; }
+      .person-name { font-size: 10px; }
+      .person-group { font-size: 9px; }
+      .view-head { align-items: center; margin-top: 22px; }
+      .sticky-actions { margin-right: -12px; margin-left: -12px; padding-right: 12px; padding-left: 12px; }
+      .sticky-info { max-width: 31vw; }
+      .button { min-height: 42px; padding: 0 13px; font-size: 12px; }
+      .button.ghost { min-height: 36px; padding: 0 9px; }
+      .result-slot { border-radius: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar" id="topbar">
+      <div class="brand">
+        <div class="brand-mark">FUK</div>
+        <div>
+          <p class="brand-title">福岡アイドル好き顔9選</p>
+          <p class="brand-subtitle">あなたの「好き」を選んでいく</p>
+        </div>
+      </div>
+      <div class="top-actions" id="topActions"></div>
+    </header>
+    <main id="view" aria-live="polite"></main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script>
+    // index.htmlと同じ場所に001.jpg〜303.jpgなどの連番画像を置きます。
+    const PHOTO_DIRS = [""];
+    const PHOTO_EXTS = ["JPG", "jpg", "jpeg", "png", "webp", "JPEG", "PNG", "WEBP"];
+    const DEFAULT_COUNT = 303;
+    const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/13gJkl2u8XGMAUWMduR-3Gz9eWH33HCHXjMqP-z8-1e8/export?format=csv";
+    const STATE_KEY = "fukuoka-idol-favorite9-state-v1";
+    const ROSTER_KEY = "fukuoka-idol-favorite9-roster-v1";
+    const ROSTER_SOURCE_KEY = "fukuoka-idol-favorite9-roster-source-v1";
+    const LAST_RESULT_KEY = "fukuoka-idol-favorite9-last-result-v1";
+
+    let roster = [];
+    let rosterSource = "numbered";
+    let state = null;
+    let previousResult = null;
+    let toastTimer = null;
+
+    const $ = (selector, root = document) => root.querySelector(selector);
+    const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
+    const esc = value => String(value ?? "").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[ch]));
+    const pad = value => String(value).padStart(3, "0");
+    const byKey = key => roster.find(person => person.key === key);
+    const unique = values => [...new Set(values)];
+
+    function toast(message) {
+      const node = $("#toast");
+      node.textContent = message;
+      node.classList.add("show");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => node.classList.remove("show"), 2700);
+    }
+
+    function shuffle(list) {
+      const result = list.slice();
+      for (let i = result.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [result[i], result[j]] = [result[j], result[i]];
+      }
+      return result;
+    }
+
+    function numberedRoster(count = DEFAULT_COUNT) {
+      return Array.from({ length: count }, (_, i) => ({
+        key: `p${i + 1}`,
+        photoNo: i + 1,
+        name: "",
+        group: ""
+      }));
+    }
+
+    function parseCsv(text) {
+      const rows = [];
+      let row = [];
+      let value = "";
+      let quoted = false;
+      const source = String(text).replace(/^\uFEFF/, "");
+      for (let i = 0; i < source.length; i++) {
+        const ch = source[i];
+        if (quoted) {
+          if (ch === '"' && source[i + 1] === '"') { value += '"'; i++; }
+          else if (ch === '"') quoted = false;
+          else value += ch;
+        } else if (ch === '"') quoted = true;
+        else if (ch === ",") { row.push(value); value = ""; }
+        else if (ch === "\n") { row.push(value.replace(/\r$/, "")); rows.push(row); row = []; value = ""; }
+        else value += ch;
+      }
+      if (value.length || row.length) { row.push(value.replace(/\r$/, "")); rows.push(row); }
+      return rows;
+    }
+
+    function parseRosterCsv(text) {
+      const rows = parseCsv(text).filter(row => row.some(cell => String(cell).trim() !== ""));
+      if (!rows.length) throw new Error("CSVにデータがありませんでした。");
+      const nameHeader = /(名前|氏名|メンバー|アイドル|member|idol)/i;
+      const groupHeader = /(所属|グループ|group|事務所)/i;
+      const numberHeader = /(連番|番号|no\.?|id|通し)/i;
+      let headerIndex = -1;
+      for (let i = 0; i < Math.min(rows.length, 8); i++) {
+        if (rows[i].some(cell => nameHeader.test(cell)) || (rows[i].some(cell => groupHeader.test(cell)) && rows[i].some(cell => numberHeader.test(cell)))) {
+          headerIndex = i;
+          break;
+        }
+      }
+      let nameCol = -1, groupCol = -1, numberCol = -1, dataStart = 0;
+      if (headerIndex >= 0) {
+        const headers = rows[headerIndex].map(s => String(s).trim());
+        nameCol = headers.findIndex(cell => nameHeader.test(cell));
+        groupCol = headers.findIndex(cell => groupHeader.test(cell));
+        numberCol = headers.findIndex(cell => numberHeader.test(cell));
+        const available = headers.map((_, i) => i).filter(i => i !== groupCol && i !== numberCol);
+        if (nameCol < 0) nameCol = available[available.length - 1] ?? 0;
+        dataStart = headerIndex + 1;
+      } else {
+        const width = Math.max(...rows.map(row => row.length));
+        if (width >= 3) { numberCol = 0; groupCol = 1; nameCol = 2; }
+        else if (width === 2) { numberCol = 0; nameCol = 1; }
+        else nameCol = 0;
+      }
+      const data = rows.slice(dataStart).filter(row => row.some(cell => String(cell).trim() !== ""));
+      const result = data.map((row, i) => {
+        const rawNumber = numberCol >= 0 ? String(row[numberCol] ?? "").trim() : "";
+        const match = rawNumber.match(/\d+/);
+        const photoNo = match ? Number(match[0]) : i + 1;
+        const name = String(row[nameCol] ?? "").trim();
+        const group = groupCol >= 0 ? String(row[groupCol] ?? "").trim() : "";
+        return { key: `p${i + 1}`, photoNo: photoNo > 0 ? photoNo : i + 1, name, group };
+      }).filter(person => person.name || person.group);
+      if (result.length < 9) throw new Error("名前と所属の列を読み取れませんでした。見出し付きのCSVを使ってください。");
+      return result;
+    }
+
+    function saveRoster() {
+      if (rosterSource === "csv") {
+        localStorage.setItem(ROSTER_KEY, JSON.stringify(roster));
+        localStorage.setItem(ROSTER_SOURCE_KEY, "csv");
+      } else if (rosterSource === "sheet") {
+        localStorage.setItem(ROSTER_KEY, JSON.stringify(roster));
+        localStorage.setItem(ROSTER_SOURCE_KEY, "sheet");
+      }
+    }
+
+    function saveState() {
+      if (state) localStorage.setItem(STATE_KEY, JSON.stringify(state));
+      else localStorage.removeItem(STATE_KEY);
+    }
+
+    function hydrateRoster() {
+      const source = localStorage.getItem(ROSTER_SOURCE_KEY);
+      const cached = localStorage.getItem(ROSTER_KEY);
+      if (cached && source === "csv") {
+        try { roster = JSON.parse(cached); rosterSource = "csv"; return true; } catch (_) {}
+      }
+      return false;
+    }
+
+    async function tryLoadSheet(showMessage = false) {
+      try {
+        const response = await fetch(SHEET_CSV_URL, { cache: "no-store" });
+        if (!response.ok) throw new Error("シートを取得できませんでした。");
+        const text = await response.text();
+        const loaded = parseRosterCsv(text);
+        roster = loaded;
+        rosterSource = "sheet";
+        saveRoster();
+        if (showMessage) toast(`シートから${roster.length}人の名簿を読み込みました。`);
+        return true;
+      } catch (_) {
+        if (showMessage) toast("シートを直接読めませんでした。CSVを読み込むか、番号だけで始められます。");
+        return false;
+      }
+    }
+
+    function restoreState() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(STATE_KEY) || "null");
+        if (saved && saved.version === 2 && saved.rosterCount === roster.length && saved.phase) return saved;
+      } catch (_) {}
+      return null;
+    }
+
+    function displayName(person) {
+      if (!person) return "メンバー";
+      return person.name || `No. ${pad(person.photoNo)}`;
+    }
+
+    function photoMarkup(person, extra = "") {
+      const no = pad(person?.photoNo ?? 0);
+      return `<div class="photo ${extra}"><div class="photo-missing">${esc(no)}</div><img data-photo="${esc(no)}" alt="${esc(displayName(person))}" loading="eager" hidden></div>`;
+    }
+
+    function bindPhotos(root = document) {
+      $$("img[data-photo]", root).forEach(img => {
+        const no = img.dataset.photo;
+        const plainNo = String(Number(no));
+        const fileNumbers = [...new Set([no, plainNo])];
+        const candidates = PHOTO_DIRS.flatMap(dir => fileNumbers.flatMap(number => PHOTO_EXTS.map(ext => `${dir}${number}.${ext}`)));
+        let candidateIndex = 0;
+        const tryNext = () => {
+          if (candidateIndex >= candidates.length) {
+            img.hidden = true;
+            return;
+          }
+          img.src = candidates[candidateIndex++];
+        };
+        img.onload = () => {
+          img.hidden = false;
+          const placeholder = img.previousElementSibling;
+          if (placeholder) placeholder.hidden = true;
+        };
+        img.onerror = tryNext;
+        tryNext();
+      });
+    }
+
+    function cardMarkup(key, options = {}) {
+      const person = byKey(key);
+      if (!person) return "";
+      const classes = ["person-card", options.className || ""].filter(Boolean).join(" ");
+      const badge = options.badge ? `<span class="pick-badge ${options.badgeClass || ""}">${esc(options.badge)}</span>` : "";
+      return `<button type="button" class="${classes}" data-person="${esc(key)}" aria-label="${esc(displayName(person))}">${badge}${photoMarkup(person)}<span class="person-meta"><span class="person-name">${esc(displayName(person))}</span><span class="person-group">${esc(person.group || "")}</span></span></button>`;
+    }
+
+    function topActions() {
+      const node = $("#topActions");
+      if (!state || state.phase === "intro") { node.innerHTML = ""; return; }
+      node.innerHTML = `<button class="icon-button" id="resetGame" type="button">最初から</button>`;
+      $("#resetGame").addEventListener("click", () => {
+        if (confirm("今の選択を消して最初からやり直しますか？")) { state = null; saveState(); render(); }
+      });
+    }
+
+    function render() {
+      $("#topbar").hidden = !state || state.phase === "intro";
+      topActions();
+      if (!state || state.phase === "intro") renderIntro();
+      else if (state.phase === "prelim") renderPrelim();
+      else if (state.phase === "four") renderFour();
+      else if (state.phase === "duel") renderDuel();
+      else if (state.phase === "rank") renderRank();
+      else if (state.phase === "result") renderResult();
+      saveState();
+    }
+
+    function renderIntro() {
+      const ranksInLayout = [4, 5, 6, 2, 1, 3, 7, 8, 9];
+      const previousGrid = previousResult?.people?.length === 9 ? ranksInLayout.map(rank => {
+        const person = previousResult.people[rank - 1];
+        const no = pad(person.photoNo);
+        return `<div class="result-slot ${rank === 1 ? "center" : ""}"><div class="photo-missing">${esc(no)}</div><img data-photo="${esc(no)}" alt="${esc(person.name || `No. ${no}`)}" loading="eager" hidden><span class="result-rank">${rank}位</span><span class="result-caption">${esc(person.name || `No. ${no}`)}</span></div>`;
+      }).join("") : "";
+      $("#view").innerHTML = `
+        <section class="home-panel">
+          <h1 class="home-title">福岡アイドル好き顔9選</h1>
+          <button class="button home-start" id="startGame" type="button">スタート</button>
+          ${previousGrid ? `<section class="home-previous"><h2 class="home-previous-title">前回の結果</h2><div class="result-grid home-result-grid">${previousGrid}</div></section>` : ""}
+        </section>`;
+      $("#startGame").addEventListener("click", startGame);
+      bindPhotos($("#view"));
+    }
+
+    function startGame() {
+      if (roster.length < 9) { toast("候補が9人未満です。名簿を確認してください。"); return; }
+      const order = shuffle(roster.map(person => person.key));
+      state = {
+        version: 2, rosterCount: roster.length, phase: "prelim",
+        sessionId: `${Date.now()}-${Math.random().toString(36).slice(2)}`,
+        prelimOrder: order, prelimBatch: 0, prelimSelected: [],
+        fourQueue: [], fourRetry: [], fourGroup: [], fourChoices: [], fourAdvanced: [],
+        duelAlive: [], duelEliminated: [], duelWins: {}, pairHistory: [], currentPair: [],
+        rankPool: [], ranked: [], rankCandidate: null, rankLow: 0, rankHigh: 0, rankMid: 0
+      };
+      render();
+    }
+
+    function renderPrelim() {
+      const batches = [];
+      for (let i = 0; i < state.prelimOrder.length; i += 9) batches.push(state.prelimOrder.slice(i, i + 9));
+      const batch = batches[state.prelimBatch] || [];
+      const selected = new Set(state.prelimSelected);
+      const pct = Math.round((state.prelimBatch / Math.max(1, batches.length)) * 100);
+      $("#view").innerHTML = `
+        <div class="view-head"><div class="view-title"><div class="eyebrow">ROUND 01 · FIRST IMPRESSION</div><h2>気になる顔を選んでね</h2><p class="view-sub">複数選択できます。選ばなかった人はこの段階では再登場しません。</p></div><div class="counter"><strong>${state.prelimBatch + 1} / ${batches.length}</strong><br>表示中の候補 ${batch.length}人</div></div>
+        <div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div>
+        <p class="selection-tip">この画面で選択中：<b>${selected.size}</b>人 · これまでの選択：<b id="prelimCount">${state.prelimSelected.length}</b>人</p>
+        <div class="card-grid">${batch.map(key => cardMarkup(key, { className: selected.has(key) ? "selected" : "" , badge: selected.has(key) ? "✓" : "" })).join("")}</div>
+        <div class="sticky-actions"><div class="sticky-left"><button class="button ghost" id="prevBatch" type="button" ${state.prelimBatch === 0 ? "disabled" : ""}>← 前へ</button><span class="sticky-info">選択数 ${state.prelimSelected.length}人</span></div><div class="sticky-right"><button class="button" id="nextBatch" type="button">${state.prelimBatch < batches.length - 1 ? "次の9人へ →" : "4人選考へ進む →"}</button></div></div>`;
+      $$("[data-person]", $("#view")).forEach(button => button.addEventListener("click", () => {
+        const key = button.dataset.person;
+        const current = new Set(state.prelimSelected);
+        if (current.has(key)) current.delete(key); else current.add(key);
+        state.prelimSelected = [...current];
+        renderPrelim();
+        saveState();
+      }));
+      $("#prevBatch").addEventListener("click", () => { if (state.prelimBatch > 0) { state.prelimBatch--; render(); } });
+      $("#nextBatch").addEventListener("click", () => {
+        if (state.prelimBatch < batches.length - 1) { state.prelimBatch++; render(); return; }
+        if (state.prelimSelected.length < 9) { toast("9選を作るには、最初に少なくとも9人選んでください。"); return; }
+        state.phase = "four";
+        state.fourQueue = shuffle(state.prelimSelected);
+        state.fourRetry = [];
+        state.fourAdvanced = [];
+        prepareFourGroup();
+        render();
+      });
+    }
+
+    function prepareFourGroup() {
+      if (state.fourGroup && state.fourGroup.length) return;
+      if (!state.fourQueue.length && state.fourRetry.length) {
+        state.fourQueue = shuffle(state.fourRetry);
+        state.fourRetry = [];
+      }
+      state.fourGroup = state.fourQueue.splice(0, 4);
+      state.fourChoices = [];
+      saveState();
+    }
+
+    function renderFour() {
+      if (!state.fourGroup.length && (state.fourQueue.length || state.fourRetry.length)) prepareFourGroup();
+      const group = state.fourGroup;
+      const choices = state.fourChoices;
+      const remaining = state.fourQueue.length + state.fourRetry.length + group.length;
+      const canDuel = state.fourAdvanced.length >= 9;
+      const pct = Math.min(100, Math.round((state.fourAdvanced.length / Math.max(state.prelimSelected.length, 1)) * 100));
+      $("#view").innerHTML = `
+        <div class="view-head"><div class="view-title"><div class="eyebrow">ROUND 02 · FOUR PICKS</div><h2>好きな顔を1番・2番で選ぶ</h2><p class="view-sub">選ばれなかった候補は、未選択の人同士で再抽選します。</p></div><div class="counter"><strong>${state.fourAdvanced.length}</strong><br>2択候補に進んだ人数</div></div>
+        <div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div>
+        ${group.length ? `<p class="selection-tip">カードをタップして、1番好き・2番目に好きな順に選択。選択中：<b>${choices.length} / ${Math.min(2, group.length)}</b></p><div class="card-grid four">${group.map(key => {
+          const index = choices.indexOf(key);
+          const rank = index === 0 ? "1" : index === 1 ? "2" : "";
+          return cardMarkup(key, { className: rank ? (index === 0 ? "rank-first" : "rank-second") : "", badge: rank, badgeClass: index === 0 ? "gold" : "silver" });
+        }).join("")}</div>` : `<div class="empty-note">4人選考は完了しました。2択に進めます。</div>`}
+        <div class="sticky-actions"><div class="sticky-left"><span class="sticky-info">未選考候補 ${remaining}人${canDuel ? " · 進むと今回は除外" : " · 再抽選できます"}</span></div><div class="sticky-right">${canDuel ? `<button class="button secondary" id="toDuel" type="button">2択へ進む · ${state.fourAdvanced.length}人</button>` : ""}<button class="button" id="confirmFour" type="button" ${group.length && choices.length < Math.min(2, group.length) ? "disabled" : ""}>${group.length ? "選択を確定 →" : "完了"}</button></div></div>`;
+      $$("[data-person]", $("#view")).forEach(button => button.addEventListener("click", () => {
+        const key = button.dataset.person;
+        const next = state.fourChoices.slice();
+        const existing = next.indexOf(key);
+        if (existing >= 0) next.splice(existing, 1);
+        else if (next.length < 2) next.push(key);
+        else { toast("1番と2番を選んでください。"); return; }
+        state.fourChoices = next;
+        renderFour();
+        saveState();
+      }));
+      if ($("#confirmFour")) $("#confirmFour").addEventListener("click", () => {
+        if (!state.fourGroup.length) return;
+        const chosen = state.fourChoices;
+        state.fourAdvanced.push(...chosen);
+        state.fourRetry.push(...state.fourGroup.filter(key => !chosen.includes(key)));
+        state.fourGroup = [];
+        state.fourChoices = [];
+        prepareFourGroup();
+        render();
+      });
+      if ($("#toDuel")) $("#toDuel").addEventListener("click", enterDuel);
+    }
+
+    function enterDuel() {
+      state.duelAlive = unique(state.fourAdvanced);
+      state.duelEliminated = [];
+      state.duelWins = {};
+      state.pairHistory = [];
+      state.currentPair = [];
+      if (state.duelAlive.length < 9) { toast("2択へ進むには候補が9人必要です。"); return; }
+      if (state.duelAlive.length === 9) {
+        beginFinalRanking();
+      } else {
+        state.phase = "duel";
+        createPair();
+      }
+      render();
+    }
+
+    function beginFinalRanking() {
+      state.phase = "rank";
+      state.rankPool = shuffle(state.duelAlive);
+      state.ranked = [state.rankPool.shift()];
+      state.rankCandidate = null;
+      state.rankLow = 0;
+      state.rankHigh = 0;
+      state.currentPair = [];
+      prepareRankComparison();
+    }
+
+    function prepareRankComparison() {
+      if (!state.rankCandidate) {
+        if (!state.rankPool.length) {
+          state.phase = "result";
+          state.currentPair = [];
+          return;
+        }
+        state.rankCandidate = state.rankPool.shift();
+        state.rankLow = 0;
+        state.rankHigh = state.ranked.length;
+      }
+      if (state.rankLow >= state.rankHigh) {
+        state.ranked.splice(state.rankLow, 0, state.rankCandidate);
+        state.rankCandidate = null;
+        prepareRankComparison();
+        return;
+      }
+      state.rankMid = Math.floor((state.rankLow + state.rankHigh) / 2);
+      state.currentPair = [state.rankCandidate, state.ranked[state.rankMid]];
+    }
+
+    function createPair() {
+      if (state.duelAlive.length <= 9) {
+        state.currentPair = [];
+        if (state.duelAlive.length === 9) beginFinalRanking();
+        return;
+      }
+      const available = [];
+      for (let i = 0; i < state.duelAlive.length; i++) {
+        for (let j = i + 1; j < state.duelAlive.length; j++) {
+          const key = [state.duelAlive[i], state.duelAlive[j]].sort().join("|");
+          if (!state.pairHistory.includes(key)) available.push([state.duelAlive[i], state.duelAlive[j], key]);
+        }
+      }
+      if (!available.length) state.pairHistory = [];
+      const choices = available.length ? available : state.duelAlive.flatMap((a, i) => state.duelAlive.slice(i + 1).map(b => [a, b, [a, b].sort().join("|")]));
+      const pair = choices[Math.floor(Math.random() * choices.length)];
+      state.currentPair = [pair[0], pair[1]];
+      state.pairHistory.push(pair[2]);
+    }
+
+    function renderDuel() {
+      if (!state.currentPair.length) createPair();
+      if (state.phase === "rank") { renderRank(); return; }
+      const [a, b] = state.currentPair;
+      const completed = state.duelEliminated.length;
+      $("#view").innerHTML = `
+        <div class="view-head"><div class="view-title"><div class="eyebrow">ROUND 03 · HEAD TO HEAD</div><h2>どちらの顔が好き？</h2><p class="view-sub">好きな方をタップ。9人になるまで2択を続けます。</p></div><div class="counter"><strong>${state.duelAlive.length}</strong><br>あと${state.duelAlive.length - 9}人を選考</div></div>
+        <div class="progress-track"><div class="progress-fill" style="width:${Math.min(100, completed / Math.max(1, completed + state.duelAlive.length - 9) * 100)}"></div></div>
+        <div class="card-grid two">${cardMarkup(a, { className: "duel-card" })}${cardMarkup(b, { className: "duel-card" })}</div><div class="duel-vs">どちらが好き？</div>
+        <p class="selection-tip" style="text-align:center">タップしたメンバーが残り、もう一方は今回の選考から外れます。</p>`;
+      $$("[data-person]", $("#view")).forEach(button => button.addEventListener("click", () => {
+        const winner = button.dataset.person;
+        const loser = state.currentPair.find(key => key !== winner);
+        state.duelAlive = state.duelAlive.filter(key => key !== loser);
+        state.duelEliminated.push(loser);
+        state.duelWins[winner] = (state.duelWins[winner] || 0) + 1;
+        state.currentPair = [];
+        createPair();
+        render();
+      }));
+    }
+
+    function renderRank() {
+      if (state.phase === "result") { render(); return; }
+      const [candidate, compared] = state.currentPair;
+      const candidateName = displayName(byKey(candidate));
+      const comparedName = displayName(byKey(compared));
+      const placed = state.ranked.length;
+      const doneComparisons = 9 - state.rankPool.length;
+      const pct = Math.round((doneComparisons / 9) * 100);
+      $("#view").innerHTML = `
+        <div class="view-head"><div class="view-title"><div class="eyebrow">FINAL · HEAD TO HEAD</div><h2>どちらの顔が好き？</h2><p class="view-sub">2人を見比べて選ぶと、その選択から1〜9位が決まります。</p></div><div class="counter"><strong>${Math.min(9, placed)} / 9</strong><br>順位を決定中</div></div>
+        <div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div>
+        <p class="selection-tip" style="text-align:center">より好きな顔をタップしてください。</p>
+        <div class="card-grid two">${cardMarkup(candidate, { className: "duel-card" })}${cardMarkup(compared, { className: "duel-card" })}</div><div class="duel-vs">どちらが好き？</div>`;
+      $$(`[data-person]`, $("#view")).forEach(button => button.addEventListener("click", () => {
+        const picked = button.dataset.person;
+        if (picked === state.rankCandidate) state.rankHigh = state.rankMid;
+        else state.rankLow = state.rankMid + 1;
+        state.currentPair = [];
+        prepareRankComparison();
+        render();
+      }));
+    }
+
+    function renderResult() {
+      rememberResult();
+      const ranksInLayout = [4, 5, 6, 2, 1, 3, 7, 8, 9];
+      const slots = ranksInLayout.map(rank => {
+        const key = state.ranked[rank - 1];
+        const person = byKey(key);
+        return `<div class="result-slot ${rank === 1 ? "center" : ""}"><div class="photo-missing">${esc(pad(person?.photoNo ?? 0))}</div><img data-photo="${esc(pad(person?.photoNo ?? 0))}" alt="${esc(displayName(person))}" loading="eager" hidden><span class="result-rank">${rank}位</span><span class="result-caption">${esc(displayName(person))}</span></div>`;
+      }).join("");
+      const text = state.ranked.map((key, index) => {
+        const person = byKey(key);
+        return `${index + 1}位 ${displayName(person)}${person?.group ? `（${person.group}）` : ""}`;
+      }).join("\n");
+      $("#view").innerHTML = `
+        <div class="view-head"><div class="view-title"><div class="eyebrow">YOUR FUKUOKA IDOL PICKS</div><h2>福岡アイドル好き顔9選</h2><p class="view-sub">中央が1位。周囲に2〜9位を並べています。</p></div><div class="counter"><strong>9</strong><br>人選出</div></div>
+        <div class="result-wrap"><div class="result-grid">${slots}</div><p class="result-position">配置：上段 <b>4・5・6位</b> ／ 中段 <b>2・1・3位</b> ／ 下段 <b>7・8・9位</b></p></div>
+        <div class="toolbar" style="justify-content:center"><button class="button secondary" id="saveImage" type="button">画像を保存</button><button class="button secondary" id="copyResult" type="button">順位をコピー</button><button class="button" id="again" type="button">もう一度遊ぶ</button></div>`;
+      bindPhotos($("#view"));
+      $("#saveImage").addEventListener("click", saveResultImage);
+      $("#copyResult").addEventListener("click", async () => {
+        try { await navigator.clipboard.writeText(text); toast("順位をコピーしました。"); }
+        catch (_) { toast(text); }
+      });
+      $("#again").addEventListener("click", () => { state = null; saveState(); render(); });
+    }
+
+    function rememberResult() {
+      if (previousResult?.sessionId === state.sessionId) return;
+      previousResult = {
+        sessionId: state.sessionId,
+        people: state.ranked.map(key => {
+          const person = byKey(key);
+          return { photoNo: person?.photoNo ?? 0, name: person?.name ?? "", group: person?.group ?? "" };
+        })
+      };
+      localStorage.setItem(LAST_RESULT_KEY, JSON.stringify(previousResult));
+    }
+
+    function loadImage(url) {
+      return new Promise((resolve, reject) => {
+        const image = new Image();
+        image.onload = () => resolve(image);
+        image.onerror = reject;
+        image.src = url;
+      });
+    }
+
+    async function findPhoto(photoNo) {
+      const no = pad(photoNo);
+      const fileNumbers = [...new Set([no, String(Number(no))])];
+      for (const dir of PHOTO_DIRS) {
+        for (const number of fileNumbers) {
+          for (const ext of PHOTO_EXTS) {
+            try { return await loadImage(`${dir}${number}.${ext}`); }
+            catch (_) {}
+          }
+        }
+      }
+      return null;
+    }
+
+    function roundedRect(ctx, x, y, width, height, radius) {
+      ctx.beginPath();
+      ctx.roundRect(x, y, width, height, radius);
+    }
+
+    async function makeResultBlob() {
+      const canvas = document.createElement("canvas");
+      canvas.width = 1080;
+      canvas.height = 1320;
+      const ctx = canvas.getContext("2d");
+      if (!ctx) throw new Error("画像を作成できませんでした。");
+      const people = state.ranked.map(key => byKey(key));
+      const photos = await Promise.all(people.map(person => findPhoto(person?.photoNo ?? 0)));
+      ctx.fillStyle = "#f5f6f8";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "#778292";
+      ctx.textAlign = "center";
+      ctx.font = "700 18px -apple-system, BlinkMacSystemFont, sans-serif";
+      ctx.fillText("FUKUOKA IDOL · FAVORITE FACE PICKS", 540, 62);
+      ctx.fillStyle = "#1d2634";
+      ctx.font = "800 42px -apple-system, BlinkMacSystemFont, sans-serif";
+      ctx.fillText("福岡アイドル好き顔9選", 540, 120);
+
+      const tile = 312, gap = 16, startX = 56, startY = 166;
+      const ranksInLayout = [4, 5, 6, 2, 1, 3, 7, 8, 9];
+      for (let i = 0; i < ranksInLayout.length; i++) {
+        const rank = ranksInLayout[i];
+        const person = people[rank - 1];
+        const image = photos[rank - 1];
+        const col = i % 3, row = Math.floor(i / 3);
+        const x = startX + col * (tile + gap);
+        const y = startY + row * (tile + gap);
+        roundedRect(ctx, x, y, tile, tile, 16);
+        ctx.save();
+        ctx.clip();
+        ctx.fillStyle = "#e9edf1";
+        ctx.fillRect(x, y, tile, tile);
+        if (image) {
+          const scale = Math.max(tile / image.width, tile / image.height);
+          const sw = tile / scale, sh = tile / scale;
+          const sx = (image.width - sw) / 2, sy = (image.height - sh) / 2;
+          ctx.drawImage(image, sx, sy, sw, sh, x, y, tile, tile);
+        } else {
+          ctx.fillStyle = "#8a96a3";
+          ctx.textAlign = "center";
+          ctx.font = "800 22px -apple-system, BlinkMacSystemFont, sans-serif";
+          ctx.fillText(`No. ${pad(person?.photoNo ?? 0)}`, x + tile / 2, y + tile / 2);
+        }
+        const gradient = ctx.createLinearGradient(0, y + tile - 104, 0, y + tile);
+        gradient.addColorStop(0, "rgba(15,22,31,0)");
+        gradient.addColorStop(1, "rgba(15,22,31,.86)");
+        ctx.fillStyle = gradient;
+        ctx.fillRect(x, y + tile - 106, tile, 106);
+        ctx.restore();
+
+        if (rank === 1) {
+          ctx.strokeStyle = "#d2a74e";
+          ctx.lineWidth = 5;
+          roundedRect(ctx, x + 2.5, y + 2.5, tile - 5, tile - 5, 16);
+          ctx.stroke();
+        }
+        ctx.fillStyle = rank === 1 ? "#b88a31" : "rgba(29,38,52,.88)";
+        roundedRect(ctx, x + 12, y + 12, 58, 38, 10);
+        ctx.fill();
+        ctx.fillStyle = "#fff";
+        ctx.textAlign = "left";
+        ctx.font = "800 17px -apple-system, BlinkMacSystemFont, sans-serif";
+        ctx.fillText(`${rank}位`, x + 24, y + 37);
+        const name = displayName(person);
+        const fontSize = name.length > 13 ? 19 : name.length > 8 ? 23 : 27;
+        ctx.font = `800 ${fontSize}px -apple-system, BlinkMacSystemFont, sans-serif`;
+        ctx.fillText(name, x + 14, y + tile - 22, tile - 28);
+      }
+      return new Promise((resolve, reject) => canvas.toBlob(blob => blob ? resolve(blob) : reject(new Error("PNGを作れませんでした。")), "image/png"));
+    }
+
+    async function saveResultImage(event) {
+      const button = event.currentTarget;
+      button.disabled = true;
+      button.textContent = "画像を作成中…";
+      try {
+        const blob = await makeResultBlob();
+        const file = new File([blob], "fukuoka-idol-favorite-9.png", { type: "image/png" });
+        if (navigator.share && navigator.canShare?.({ files: [file] })) {
+          await navigator.share({ files: [file], title: "福岡アイドル好き顔9選" });
+          toast("共有メニューから写真に保存できます。");
+        } else {
+          const url = URL.createObjectURL(blob);
+          const link = document.createElement("a");
+          link.href = url;
+          link.download = file.name;
+          link.click();
+          setTimeout(() => URL.revokeObjectURL(url), 1000);
+          toast("ランキング画像をダウンロードしました。");
+        }
+      } catch (error) {
+        if (error.name !== "AbortError") toast(error.message || "画像を保存できませんでした。");
+      } finally {
+        button.disabled = false;
+        button.textContent = "画像を保存";
+      }
+    }
+
+    async function onCsvSelected(event) {
+      const file = event.target.files?.[0];
+      if (!file) return;
+      try {
+        const loaded = parseRosterCsv(await file.text());
+        roster = loaded;
+        rosterSource = "csv";
+        saveRoster();
+        state = null;
+        saveState();
+        toast(`${roster.length}人の名簿を読み込みました。`);
+        render();
+      } catch (error) { toast(error.message || "CSVを読み込めませんでした。"); }
+      event.target.value = "";
+    }
+
+    async function boot() {
+      try { previousResult = JSON.parse(localStorage.getItem(LAST_RESULT_KEY) || "null"); } catch (_) { previousResult = null; }
+      const hasCsvCache = hydrateRoster();
+      if (!hasCsvCache) {
+        const savedSource = localStorage.getItem(ROSTER_SOURCE_KEY);
+        const savedRoster = localStorage.getItem(ROSTER_KEY);
+        if (savedRoster && savedSource === "sheet") {
+          try { roster = JSON.parse(savedRoster); rosterSource = "sheet"; } catch (_) {}
+        }
+        if (location.protocol === "http:" || location.protocol === "https:") await tryLoadSheet(false);
+      }
+      if (!roster.length) roster = numberedRoster(DEFAULT_COUNT);
+      state = restoreState();
+      render();
+    }
+
+    boot();
+  </script>
+</body>
+</html>

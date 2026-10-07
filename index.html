@@ -269,8 +269,20 @@
       ["IQP研究生", ["月野 杏咲", "望月 雫汐", "宮岡 ゆあ", "葉月 陽愛", "松岡 由莉", "黒田 さい", "一条 虹花", "雪 まい", "花咲 奈々未", "七瀬 りあ", "有栖 みこ", "星乃 未来", "愛実 にこ", "綾乃 鈴"]],
       ["KAWAII LAB. SOUTH", ["大川 世莉", "福本 楓", "黒田 真央", "濵嵜 愛子", "澤村 いろは", "森野 めね", "松田 奈々", "門倉 彩花", "有村 心晴"]],
     ];
-    const FIXED_ROSTER = FIXED_ROSTER_GROUPS.flatMap(([group, names]) => names.map(name => ({ name, group })))
-      .map((person, index) => ({ key: `p${index + 1}`, photoNo: index + 1, ...person }));
+    // 選択対象から外すメンバーの画像番号
+　　　const EXCLUDED_PHOTO_NOS = [75];
+
+　　　const FIXED_ROSTER = FIXED_ROSTER_GROUPS.flatMap(([group, names]) =>
+    names.map(name => ({ name, group }))
+    )
+    .map((person, index) => ({
+    key: `p${index + 1}`,
+    photoNo: index + 1,
+    ...person
+    }))
+    .filter(person =>
+    !EXCLUDED_PHOTO_NOS.includes(person.photoNo));
+    
     let roster = FIXED_ROSTER;
     let state = null;
     let previousResult = null;

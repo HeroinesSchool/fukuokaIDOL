@@ -474,7 +474,7 @@
       $("#view").innerHTML = `
         <div class="view-head"><div class="view-title"><div class="eyebrow">ROUND 02 · FOUR PICKS</div><h2>好きな顔を1番・2番で選ぶ</h2><p class="view-sub">選ばれなかった候補は、未選択の人同士で再抽選します。</p></div><div class="counter"><strong>${state.fourAdvanced.length}</strong><br>2択候補に進んだ人数</div></div>
         <div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div>
-        ${group.length ? `<p class="selection-tip">カードをタップして、1番好き・2番目に好きな順に選択。選択中：<b>${choices.length} / ${Math.min(2, group.length)}</b></p><div class="card-grid four">${group.map(key => {
+        ${group.length ? `<p class="selection-tip">カードをタップして、1番目・2番目に好きな順に選択。選択中：<b>${choices.length} / ${Math.min(2, group.length)}</b></p><div class="card-grid four">${group.map(key => {
           const index = choices.indexOf(key);
           const rank = index === 0 ? "1" : index === 1 ? "2" : "";
           return cardMarkup(key, { className: rank ? (index === 0 ? "rank-first" : "rank-second") : "", badge: rank, badgeClass: index === 0 ? "gold" : "silver" });
